@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 【1】height */
+        html, body {
+        height: 100%;
+        }
+        .parent {
+            width: 100%;
+            height: 100%;
+        }
+        .child1 {
+            height: 100px;
+        }
+        .child2 {
+            height: 100%;
+        }
+        /* 【2】BFC解决兄弟元素之间的margin合并 */
+        .blue, .red-inner {
+            height: 50px;
+            margin: 10px 0;
+        }
+        .blue {
+            background: blue;
+        }
+        .red-outer {
+            overflow: hidden;
+            background: red;
+        }
+        /* 【3】overflow */
+        .out {
+            /* 【3-1】 */
+            height: 100px; /* 内容子元素ui的高度是264px */
+            overflow: auto; /* 这样就可以滚动了！ */
+        }
+        /* 【4】flex - overflow */
+        #myDIV {
+            margin-top: 10px;
+            height: 250px;
+            width: 250px;
+            overflow: auto;
+        }
+
+        #content {
+            height: 800px;
+            width: 2000px;
+            padding: 10px;
+            background-color: coral;
+        }
+    </style>
+    <script src="./dist/main.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <button @click="postMessage">给钉钉发消息</button>
+    <!-- <iframe name="crossDomainIframe" src="https://dingtalk.com"></iframe> -->
+   
+</body>
+</html>
